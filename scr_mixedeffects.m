@@ -51,7 +51,7 @@ title('Bonferroni comparison: click on the group you want to test');
 %% MIXED-EFFECTS model.
 % This is another alternative, it is more robust, and I think it would give
 % a good result. 
-clc;
+%clc;
 disp('Mixed-effects model')
 % Rearranging the data:
 tbl = table(reshape(x,numel(x),1), ...
@@ -85,3 +85,9 @@ str.interval = sprintf('m=%2.2f lies between: %2.2f and %2.2f %s',...
 disp('RELEVANT INFORMATION')
 disp(str);
 % doc fitlme
+%% 
+clc
+lme1 = fitlme(tbl,'amplitude~dist2tissue+(1|groupidx)');
+% 'CityMPG~Horsepower+(1|EngineType)+(Horsepower-1|EngineType)'
+lme2 = fitlme(tbl,'amplitude~dist2tissue+(1|groupidx)+(dist2tissue|groupidx)');
+lme3 = fitlme(tbl,'amplitude~(1+dist2tissue|groupidx)');
