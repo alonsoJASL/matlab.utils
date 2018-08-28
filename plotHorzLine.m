@@ -11,5 +11,6 @@ else
 end
 
 for ix=1:length(values)
-    plot([vector(1) vector(nPoints)], [values(ix) values(ix)]);
+    plot([vector(1) vector(nPoints)], [values(ix) values(ix)], ...
+        'LineWidth', 2);
 end

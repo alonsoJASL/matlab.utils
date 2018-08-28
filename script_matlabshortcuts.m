@@ -69,7 +69,7 @@ CLOUDFOLDER = uigetdir(CLOUDFOLDER);
 gcf;
 filename=input('FILENAME? [testFigure]:','s');
 if isempty(filename)
-    filename = 'testFigure.tif';
+    filename = 'testFigure.eps';
 end
 set(gcf,'color','w')
 set(gcf,'PaperPositionMode','auto')
