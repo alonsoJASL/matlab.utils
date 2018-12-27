@@ -29,7 +29,7 @@ if ~exist('auxcmap', 'var')
     axucmap = [[0 0 0]; axucmap];
 end
 colormap(axucmap);
-%% BACK2GREY
+%% BLACK2GREY
 % part of: COLOUR
 cmap = 0.75.*[sort(rand(254,1)) sort(rand(254,1)) sort(rand(254,1))];
 cmap = [0 0 0; cmap];
